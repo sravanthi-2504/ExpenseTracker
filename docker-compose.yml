@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    environment:
+      - NODE_ENV=production
+      - JWT_SECRET=your-secure-secret-here
+      - PORT=3008
+    volumes:
+      - ./data:/app/data
+    restart: always
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app
+    restart: always
+
+# Note: In production, you would typically use a real MySQL/PostgreSQL container.
+# This setup uses SQLite for simplicity but is easily swappable.

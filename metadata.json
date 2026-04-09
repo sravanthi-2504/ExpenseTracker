@@ -1,0 +1,5 @@
+{
+  "name": "Dockerized Expense Tracker",
+  "description": "A full-stack expense tracker with recurring expenses, transfers, and visual analytics, designed for Docker deployment.",
+  "requestFramePermissions": []
+}
