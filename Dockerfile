@@ -1,4 +1,4 @@
-# Stage 1: Build the frontend
+# Stage 1: Build the frontend (Vite)
 FROM node:20-slim AS builder
 WORKDIR /app
 COPY package*.json ./
